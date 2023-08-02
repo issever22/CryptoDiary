@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="350dp"
+    android:height="44dp"
+    android:viewportWidth="350"
+    android:viewportHeight="44">
+    <group>
+        <clip-path android:pathData="M12 0H338C344.627 0 350 5.37258 350 12V32C350 38.6274 344.627 44 338 44H12C5.37258 44 0 38.6274 0 32V12C0 5.37258 5.37258 0 12 0Z" />
+        <path
+            android:fillColor="@color/searchbar_background"
+            android:pathData="M0 0V44H350V0" />
+    </group>
+</vector>

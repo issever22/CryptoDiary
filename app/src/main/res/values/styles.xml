@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">@color/white</item>
+        <item name="background">@color/white</item>
+        <item name="android:background">@color/white</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/BigTextStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BigTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+
+
+    <!--Title Text Styles-->
+    <style name="BigTitleTextStyle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="MediumTitleTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="SmallTitleTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <!--Default Text Styles-->
+    <style name="BigTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="MediumTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="SmallTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <!--Symbol Text Styles-->
+    <style name="DollarSymbolStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:text">@string/dollar_symbol</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="EuroSymbolStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:text">@string/euro_symbol</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:textColor">@color/info_color</item>
+    </style>
+
+    <style name="EthSymbolStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:text">@string/eth_symbol</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:textColor">@color/eth_gray</item>
+    </style>
+
+    <style name="BitcoinSymbolStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:text">@string/bitcoin_symbol</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:textColor">@color/warning_color</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/card_background_color</item>
+    </style>
+
+
+    <style name="SearchBarStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/color_hint</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+        <item name="android:inputType">text</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

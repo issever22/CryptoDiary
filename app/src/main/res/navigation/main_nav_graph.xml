@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/coinDetailFragment"
+        android:name="com.issever.cryptodiary.ui.main.fragments.detail.coin.CoinDetailFragment"
+        android:label="CoinDetailFragment" >
+        <argument
+            android:name="coin"
+            app:argType="com.issever.cryptodiary.data.model.entities.CoinEntity"
+            app:nullable="true" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.issever.cryptodiary.ui.main.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/coinDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_nftDetailFragment"
+            app:destination="@id/nftDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nftDetailFragment"
+        android:name="com.issever.cryptodiary.ui.main.fragments.detail.nft.NftDetailFragment"
+        android:label="NftDetailFragment">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.issever.cryptodiary.data.model.entities.NftEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:background="@color/card_background_color"
+        app:cardCornerRadius="16dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="100dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/nftItemIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:imageUrl="@{data.thumb}"
+                    tools:src="@drawable/app_logo"
+                    android:contentDescription="@string/coin_logo" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SmallTitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@{data.symbol}"
+                android:gravity="center"
+                tools:text="Bitcoin" />
+
+            <TextView
+                style="@style/MediumTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{data.name}"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                tools:text="Bitcoin" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+</layout>

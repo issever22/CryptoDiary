@@ -1,0 +1,144 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.issever.cryptodiary'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.issever.cryptodiary"
+        minSdk 28
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+
+        debug {
+            resValue "string", "BASE_URL", "https://api.coingecko.com/api/v3/"
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            resValue "string", "BASE_URL", "https://api.issever.co/"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Firebase
+    def firebaseVersion = "31.1.1"
+    implementation platform("com.google.firebase:firebase-bom:$firebaseVersion")
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+
+    //Retrofit
+    def retrofitVersion = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+
+    // Moshi
+    def moshiVersion = "1.15.0"
+    implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
+
+    // okHttp
+    def okHttpVersion = "5.0.0-alpha.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
+    // Room
+    def roomVersion = "2.5.2"
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+
+    // Dependency Injection - Hilt
+    def hiltVersion = "2.44"
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+
+    // Lifecycle Scopes
+    def lifecycleVersion = "2.5.1"
+    def lifecycleExtVersion = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleExtVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
+
+    // Navigation
+    def navVersion = "2.6.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-runtime-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+
+    // Coroutines
+    def coroutinesVersion = '1.5.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+
+    // Glide
+    def glideVersion = '4.13.2'
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // WorkManager
+    def workVersion = "2.8.1"
+    implementation "androidx.work:work-runtime-ktx:$workVersion"
+
+    // ViewPager2
+    def viewpagerVersion = "2:1.0.0"
+    implementation "androidx.viewpager2:viewpager$viewpagerVersion"
+
+    // view pager indicator
+    def viewpagerIndicatorVersion = "5.0"
+    implementation("com.tbuonomo:dotsindicator:$viewpagerIndicatorVersion")
+
+    // Charting
+    def chartVersion = "v3.1.0"
+    implementation "com.github.PhilJay:MPAndroidChart:$chartVersion"
+
+}
+
+kapt {
+    correctErrorTypes true
+}
